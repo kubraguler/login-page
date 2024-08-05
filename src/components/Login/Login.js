@@ -1,10 +1,12 @@
 import { useState } from "react";
+import ModalPortal from "../ModalPortal";
 
 import "./Login.scss";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [showModal, setShowModal] = useState(false);
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -34,7 +36,11 @@ const Login = () => {
 				<button type="submit" className="login__button">
 					Login
 				</button>
+				<button type="button" className="reset__button" onClick={() => setShowModal(true)}>
+					Forgot password?
+				</button>
 			</form>
+			{showModal && <ModalPortal onClose={() => setShowModal(false)} />}
 		</div>
 	);
 };
