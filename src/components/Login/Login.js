@@ -8,7 +8,7 @@ const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [showModal, setShowModal] = useState(false);
-	const { data } = useWebSocket("ws://stream.tradingeconomics.com/?client=guest:guest", JSON.stringify({ topic: "subscribe", to: "EURUSD:CUR" }));
+	const { data } = useWebSocket("wss://stream.tradingeconomics.com/?client=guest:guest", JSON.stringify({ topic: "subscribe", to: "EURUSD:CUR" }));
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
