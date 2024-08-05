@@ -75,3 +75,11 @@
 		cursor: pointer;
 	}
 }
+
+.exchange__rate {
+	margin-top: 2rem;
+
+	&-latest {
+		font-size: 12px;
+	}
+}
